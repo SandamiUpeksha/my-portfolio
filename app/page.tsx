@@ -41,12 +41,12 @@ export default function Home() {
 
         <div className="max-w-6xl mx-auto">
           {/* Main Grid - Header and Image at Same Level */}
-          <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div className="grid md:grid-cols-2 md:gap-12  items-start">
             {/* Left - Header Content */}
             <div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light mb-4">Praveen De Silva</h1>
-              <p className="text-sm sm:text-base md:text-xl font-light text-pink-200 mb-2">Bsc Eng (hons) - University of Moratuwa (UG)</p>
-              <p className="text-lg md:text-2xl font-light text-gray-300 mb-8">{getSubtitle()}</p>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light mb-2">Praveen De Silva</h1>
+              <p className="text-sm sm:text-base md:text-xl font-light text-pink-200 mb-8">Bsc Eng (hons) - University of Moratuwa (UG)</p>
+              
               
               <button className="px-8 py-3 border border-white rounded-full hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 font-light">
                 Contact Me
@@ -73,10 +73,10 @@ export default function Home() {
                 <div className="relative h-[32rem] flex items-center justify-center">
                   <div className="bg-opacity-5 backdrop-blur-md rounded-lg p-8  border-opacity-20  w-full h-full flex flex-col justify-center">
                     <h2 className="text-3xl font-light text-white mb-6">About Me</h2>
-                    <p className="text-lg text-gray-200 font-light leading-relaxed mb-4">
+                    <p className="text-lg text-gray-200 font-light leading-relaxed mb-4 text-justify">
                       I'm a passionate engineering undergraduate pursuing my BSc in Engineering, dedicated to innovation and creative problem-solving.
                     </p>
-                    <p className="text-lg text-gray-200 font-light leading-relaxed">
+                    <p className="text-lg text-gray-200 font-light leading-relaxed text-justify">
                       Currently at University of Moratuwa, I combine academic excellence with practical experience.
                     </p>
                   </div>

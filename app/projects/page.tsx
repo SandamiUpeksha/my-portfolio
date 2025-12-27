@@ -62,7 +62,7 @@ export default function Projects() {
   return (
     <div className="container mx-auto px-6 pt-20 pb-16">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-5xl md:text-6xl font-light mb-4">Projects</h1>
+        <h1 className="text-4xl md:text-6xl font-light mb-4">Projects</h1>
         <p className="text-xl font-light text-gray-300 mb-12">
           Featured work and personal projects
         </p>

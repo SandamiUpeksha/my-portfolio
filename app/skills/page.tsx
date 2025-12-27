@@ -70,7 +70,7 @@ export default function Skills() {
 
       <div className="max-w-6xl mx-auto">
         <div className="mb-12">
-          <h1 className="text-5xl md:text-6xl font-light mb-4">Skills</h1>
+          <h1 className="text-4xl md:text-6xl font-light mb-4">Skills</h1>
           <p className="text-xl font-light text-gray-300">
             {getSubtitle()}
           </p>
