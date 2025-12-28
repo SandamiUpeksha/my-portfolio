@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, ArrowUp } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -77,32 +78,65 @@ export default function Navigation() {
         </button>
       </nav>
 
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-black bg-opacity-95 flex flex-col items-center justify-center space-y-8 md:hidden">
-          <Link href="/" className="text-2xl hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>
-            HOME
-          </Link>
-          <Link href="/skills" className="text-2xl hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>
-            SKILLS
-          </Link>
-          <Link href="/projects" className="text-2xl hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>
-            PROJECTS
-          </Link>
-          <Link href="/achievements" className="text-2xl hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>
-            ACHIEVEMENTS
-          </Link>
-          <Link href="/contact" className="text-2xl hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>
-            CONTACT
-          </Link>
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-40 backdrop-blur-sm bg-black bg-opacity-30 md:hidden"
+            onClick={() => setIsMenuOpen(false)}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Mobile Menu Sidebar */}
+      <motion.div 
+        initial={{ x: '100%' }}
+        animate={{ x: isMenuOpen ? 0 : '100%' }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="fixed top-0 right-0 h-full w-64 z-50 bg-gradient-to-br from-[#000B4F] via-[#000000] to-[#000B4F] border-l border-white border-opacity-20 md:hidden"
+      >
+        <div className="flex flex-col h-full">
+          {/* Close Button */}
+          <div className="flex justify-end p-6">
+            <button onClick={() => setIsMenuOpen(false)}>
+              <X size={28} className="hover:text-white transition-colors" />
+            </button>
+          </div>
+          
+          {/* Menu Links */}
+          <div className="flex flex-col space-y-6 px-8 pt-8">
+            {['/', '/skills', '/projects', '/achievements', '/contact'].map((path, index) => {
+              const labels = ['HOME', 'SKILLS', 'PROJECTS', 'ACHIEVEMENTS', 'CONTACT'];
+              return (
+                <motion.div
+                  key={path}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: isMenuOpen ? 1 : 0, x: isMenuOpen ? 0 : 20 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                >
+                  <Link 
+                    href={path} 
+                    className={`text-xl hover:text-white transition-colors pb-2 block ${isActive(path) ? 'border-b border-white' : ''}`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {labels[index]}
+                  </Link>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
-      )}
+      </motion.div>
 
       {/* Scroll to Top Button */}
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 p-4 bg-white bg-opacity-0.1 backdrop-blur-md rounded-full border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 shadow-lg shadow-white/10 group"
+          className="fixed bottom-8 right-8 z-50 p-4 bg-opacity-0.1 backdrop-blur-md rounded-full border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 shadow-lg shadow-white/10 group"
           aria-label="Scroll to top"
         >
           <ArrowUp size={24} className="group-hover:-translate-y-1 transition-transform duration-300" />

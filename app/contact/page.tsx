@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import { MessageCircle, Send, Linkedin, Github, Mail, Phone } from 'lucide-react';
+import FadeInSection from '@/components/FadeInSection';
+import { motion } from 'framer-motion';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -10,13 +12,46 @@ export default function Contact() {
     subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I will get back to you soon.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      // Google Form submission URL
+      const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSclOOd11nEkWkdpe9udp3G5P5xFyVJJc9DaSAMQTYgAuB3FlA/formResponse';
+      
+      // Prepare form data with Google Form entry IDs
+      const formDataToSubmit = new FormData();
+      formDataToSubmit.append('entry.1189228940', formData.name);
+      formDataToSubmit.append('entry.536347871', formData.email);
+      formDataToSubmit.append('entry.512101171', formData.subject);
+      formDataToSubmit.append('entry.108720042', formData.message);
+
+      // Submit to Google Form
+      await fetch(GOOGLE_FORM_URL, {
+        method: 'POST',
+        body: formDataToSubmit,
+        mode: 'no-cors'
+      });
+      
+      // Show success message
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus('idle');
+      }, 5000);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -29,14 +64,17 @@ export default function Contact() {
   return (
     <div className="container mx-auto px-6 pt-20 pb-16">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl md:text-6xl font-light mb-4">Contact</h1>
-        <p className="text-xl font-light text-gray-300 mb-12">
-          Get in touch with me
-        </p>
+        <FadeInSection>
+          <h1 className="text-4xl md:text-6xl font-light mb-4">Contact</h1>
+          <p className="text-xl font-light text-gray-300 mb-12">
+            Get in touch with me
+          </p>
+        </FadeInSection>
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Contact Form */}
-          <div className="bg-black bg-opacity-40 backdrop-blur-md rounded-lg p-8 shadow-xl shadow-white/20 hover:shadow-white/30 transition-all duration-300">
+          <FadeInSection delay={0.1}>
+            <div className="bg-black bg-opacity-40 backdrop-blur-md rounded-lg p-8 shadow-xl shadow-white/20 transition-all duration-300">
             <h2 className="text-2xl font-light mb-6">Send a Message</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -105,16 +143,42 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full px-8 py-3 border border-white rounded-full hover:bg-white hover:text-black transition-all duration-300 font-light"
+                disabled={isSubmitting}
+                className={`w-full px-8 py-3 border border-white rounded-full transition-all duration-300 font-light flex items-center justify-center gap-2 ${
+                  isSubmitting 
+                    ? 'opacity-50 cursor-not-allowed' 
+                    : 'hover:bg-white hover:text-black'
+                }`}
               >
-                Send Message
+                {isSubmitting ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    Sending...
+                  </>
+                ) : (
+                  'Send Message'
+                )}
               </button>
+
+              {submitStatus === 'success' && (
+                <div className="p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-green-200 text-center font-light">
+                  ✓ Message sent successfully! Thank you for reaching out.
+                </div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <div className="p-4 bg-red-500/20 border border-red-500/50 rounded-lg text-red-200 text-center font-light">
+                  Something went wrong. Please try again or email directly at desilvabkp@gmail.com
+                </div>
+              )}
             </form>
           </div>
+        </FadeInSection>
 
           {/* Contact Information */}
           <div className="space-y-8">
-            <div className="bg-black bg-opacity-40 backdrop-blur-md rounded-lg p-8 shadow-xl shadow-white/20 hover:shadow-white/30 transition-all duration-300">
+            <FadeInSection delay={0.2}>
+              <div className="bg-black bg-opacity-40 backdrop-blur-md rounded-lg p-8 shadow-xl shadow-white/20 transition-all duration-300">
               <h2 className="text-2xl font-light mb-6">Contact Information</h2>
               <div className="space-y-4 font-light">
                 <div>
@@ -131,48 +195,59 @@ export default function Contact() {
                 </div>
               </div>
             </div>
+          </FadeInSection>
 
-            <div className="bg-black bg-opacity-40 backdrop-blur-md rounded-lg p-8 shadow-xl shadow-white/20 hover:shadow-white/30 transition-all duration-300">
+            <FadeInSection delay={0.3}>
+              <div className="bg-black bg-opacity-40 backdrop-blur-md rounded-lg p-8 shadow-xl shadow-white/20 transition-all duration-300">
               <h2 className="text-2xl font-light mb-6">Social Media</h2>
               <div className="flex items-center justify-center gap-6">
-                <a 
-                  href="https://wa.me/94702241222" 
+                <motion.a
+                  whileHover={{ scale: 1.15, rotate: 5 }}
+                  whileTap={{ scale: 0.95 }}
+                  href="https://wa.me/94702241222"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 transform"
+                  className="p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300"
                   title="WhatsApp"
                 >
                   <MessageCircle size={28} className="text-white" />
-                </a>
-                <a 
-                  href="https://t.me/praveen" 
+                </motion.a>
+                <motion.a
+                  whileHover={{ scale: 1.15, rotate: 5 }}
+                  whileTap={{ scale: 0.95 }}
+                  href=""
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 transform"
+                  className="p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300"
                   title="Telegram"
                 >
                   <Send size={28} className="text-white" />
-                </a>
-                <a 
-                  href="https://www.linkedin.com/in/praveen-de-silva" 
+                </motion.a>
+                <motion.a
+                  whileHover={{ scale: 1.15, rotate: 5 }}
+                  whileTap={{ scale: 0.95 }}
+                  href="https://www.linkedin.com/in/praveen-de-silva-854a732a2"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 transform"
+                  className="p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300"
                   title="LinkedIn"
                 >
                   <Linkedin size={28} className="text-white" />
-                </a>
-                <a 
-                  href="https://github.com/praveen" 
+                </motion.a>
+                <motion.a
+                  whileHover={{ scale: 1.15, rotate: 5 }}
+                  whileTap={{ scale: 0.95 }}
+                  href="https://github.com/praveen-de-silva"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 transform"
+                  className="p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300"
                   title="GitHub"
                 >
                   <Github size={28} className="text-white" />
-                </a>
+                </motion.a>
               </div>
             </div>
+          </FadeInSection>
           </div>
         </div>
       </div>

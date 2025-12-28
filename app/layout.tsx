@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import PageTransition from "@/components/PageTransition";
 
 export const metadata: Metadata = {
   title: "Praveen De Silva | Portfolio",
@@ -18,7 +19,9 @@ export default function RootLayout({
       <body className="min-h-screen bg-gradient-to-br from-[#000B4F] via-[#000000] to-[#000B4F] text-white font-sans flex flex-col">
         <Navigation />
         <main className="flex-grow">
-          {children}
+          <PageTransition>
+            {children}
+          </PageTransition>
         </main>
         <Footer />
       </body>

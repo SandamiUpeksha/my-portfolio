@@ -1,7 +1,40 @@
-import { ExternalLink, Github, VideoOff } from 'lucide-react';
+'use client';
+
+import { ExternalLink, Github, VideoOff, Linkedin } from 'lucide-react';
+import FadeInSection from '@/components/FadeInSection';
 
 export default function Projects() {
   const projects = [
+    {
+      title: "CoupleCore relationship helper",
+      problem: "This is a system that helps to keep relationships more easier.",
+      features: [
+        "Daily mood tracker", 
+        "Share Calender",
+        "AI powered solution maker"
+      ],
+      techStack: "React, Vite, TailwindCSS, Node.js, Express, FastAPI, Python, scikit-learn, MongoDB",
+      liveLink: null, // Update with your actual Vercel URL
+      githubLink: null, // Update with your actual GitHub URL
+      linkedinLink: null,
+      status: "In Progress"
+    },
+    {
+      title: "CoupleCoreAI",
+      problem: "AI-powered relationship assistant that analyzes couple problems and provides personalized solutions using machine learning.",
+      features: [
+        "Text-based problem input",
+        "ML-powered category prediction (Chores, Finances, Affection)",
+        "Personalized solution suggestions",
+        "User feedback system",
+        "MongoDB logging for analysis"
+      ],
+      techStack: "React, Vite, TailwindCSS, Node.js, Express, FastAPI, Python, scikit-learn, MongoDB",
+      liveLink: "https://couplecore-ai.vercel.app/", // Update with your actual Vercel URL
+      githubLink: "https://github.com/praveen-de-silva/Proj_AIPoweredProblemSolver", // Update with your actual GitHub URL
+      linkedinLink: "https://www.linkedin.com/posts/praveen-de-silva-854a732a2_se-datascience-ai-activity-7411021923201216512-a6Ua?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEkg6AABOq2dXdWOGUX3vzM4-Jm8Pzn8mAg",
+      status: "Completed"
+    },
     {
       title: "Dog vs Cat Specifier",
       problem: "Predicts whether an uploaded image is a dog or a cat using deep learning.",
@@ -14,6 +47,7 @@ export default function Projects() {
       techStack: "Python, TensorFlow, Streamlit",
       liveLink: "https://dogcatspecifierpds.streamlit.app/",
       githubLink: "https://github.com/username/weather-app",
+      linkedinLink: "https://www.linkedin.com/posts/praveen-de-silva-854a732a2_ml-ai-datascience-activity-7411013210624987136-2-i9?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEkg6AABOq2dXdWOGUX3vzM4-Jm8Pzn8mAg",
       status: "Completed"
     },
     {
@@ -28,6 +62,7 @@ export default function Projects() {
       techStack: "PostgreSQL, Express.js, React, Node.js (PERN), TypeScript, CSS",
       liveLink: null,
       githubLink: "https://github.com/microbanking-system/DBMS_Microbanking_System",
+      linkedinLink: "https://www.linkedin.com/posts/praveen-de-silva-854a732a2_webdev-dbms-ts-activity-7410811630453874688--ZWZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEkg6AABOq2dXdWOGUX3vzM4-Jm8Pzn8mAg",
       status: "Completed"
     },
     {
@@ -35,12 +70,14 @@ export default function Projects() {
       problem: "System for make the driver taks easier and safe. This brings us to the FINAL round of this competition.",
       features: [
         "Digital documentation handelling",
-        "Driver drunk detaila",
-        "Sleep detection"
+        "Driver intoxication detection",
+        "Driver drowsiness (sleep) detection",
+        "NFC card scanning for easy identification"
       ],
-      techStack: "Python, IoT, MQTT, InfluxDB, Grafana",
+      techStack: "Python, IoT, Arduino",
       liveLink: null,
-      githubLink: null,
+      githubLink: "https://github.com/KeshRD/Driver-Sleep-detector",
+      linkedinLink: "https://www.linkedin.com/posts/thashira-devindu-49a1b6349_sliotchallenge2025-iot-sltmobitel-ugcPost-7309617829874434048-ljBo?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEkg6AABOq2dXdWOGUX3vzM4-Jm8Pzn8mAg",
       status: "Completed"
     },
     {
@@ -55,7 +92,37 @@ export default function Projects() {
       techStack: "React, Node.js, MongoDB, Express, Stripe",
       liveLink: null,
       githubLink: null,
+      linkedinLink: null,
       status: "In Progress"
+    },
+    {
+      title: "My Portfolio - 02",
+      problem: "Modern responsive portfolio website built as a professional digital presence to showcase projects, skills, and achievements to potential employers and collaborators.",
+      features: [
+        "Responsive design with dark theme",
+        "Interactive project showcase with filtering",
+        "Skills carousel with progress indicators",
+        "Contact form with validation"
+        // "Smooth animations and transitions"
+      ],
+      techStack: "Next.js, React, TypeScript, Tailwind CSS, Lucide Icons",
+      liveLink: "https://relaxed-mermaid-821c62.netlify.app",
+      githubLink: "https://github.com/praveen-de-silva/my-portfolio",
+      linkedinLink: "https://www.linkedin.com/posts/praveen-de-silva-854a732a2_proud-to-announce-the-completion-of-my-activity-7410786064627494914-xONa?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEkg6AABOq2dXdWOGUX3vzM4-Jm8Pzn8mAg",
+      status: "Completed"
+    },
+    {
+      title: "My Portfolio - 01",
+      problem: "Static site for my career purpose.",
+      features: [
+        "Creative UI",
+        "Easy maanageble"
+      ],
+      techStack: "HTML, CSS, JS",
+      liveLink: "relaxed-mermaid-821c62.netlify.app",
+      githubLink: "https://github.com/praveen-de-silva/MyProjects",
+      linkedinLink: "https://www.linkedin.com/posts/praveen-de-silva-854a732a2_proud-to-announce-the-completion-of-my-activity-7410786064627494914-xONa?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEkg6AABOq2dXdWOGUX3vzM4-Jm8Pzn8mAg",
+      status: "Completed"
     }
   ];
 
@@ -69,10 +136,8 @@ export default function Projects() {
 
         <div className="space-y-8">
           {projects.map((project, index) => (
-            <div 
-              key={index}
-              className="bg-black bg-opacity-40 backdrop-blur-md rounded-lg p-8 shadow-xl shadow-white/20 hover:shadow-white/30 transition-all duration-300"
-            >
+            <FadeInSection key={index} delay={index * 0.05}>
+              <div className="bg-black bg-opacity-40 backdrop-blur-md rounded-lg p-8 shadow-xl shadow-white/20 transition-all duration-300">
               {/* Title and Status */}
               <div className="flex justify-between items-start mb-4 text-2xl font-light mb-6 text-black border-b border-white border-opacity-20 pb-3">
                 <h2 className="text-3xl font-light text-white">
@@ -141,17 +206,32 @@ export default function Projects() {
                   </span>
                 )}
                 
-                <a 
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-2 text-white font-light hover:text-gray-300 transition-colors"
-                >
-                  <Github size={18} />
-                  <span>Github</span>
-                </a>
+                {project.githubLink && (
+                  <a 
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-2 text-white font-light hover:text-gray-300 transition-colors"
+                  >
+                    <Github size={18} />
+                    <span>Github</span>
+                  </a>
+                )}
+
+                {project.linkedinLink && (
+                  <a 
+                    href={project.linkedinLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-2 text-white font-light hover:text-blue-400 transition-colors"
+                  >
+                    <Linkedin size={18} />
+                    <span>LinkedIn Post</span>
+                  </a>
+                )}
               </div>
-            </div>
+              </div>
+            </FadeInSection>
           ))}
         </div>
       </div>

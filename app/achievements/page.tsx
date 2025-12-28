@@ -1,53 +1,50 @@
+'use client';
+
 import { Linkedin } from 'lucide-react';
+import FadeInSection from '@/components/FadeInSection';
 
 export default function Achievements() {
   const achievements = [
     {
-      name: "Google Hash Code 2024",
-      result: "Top 5%",
-      context: "Solved algorithm problems in a team of 4 using Python and Graph Algorithms",
-      linkedinLink: "https://linkedin.com/posts/username/hash-code-2024"
+      name: "University Academic Achievements",
+      result: "Dean list",
+      context: "I could perform my academics to be in the Dean lists in semester 1, semester 2",
+      linkedinLink: ""
     },
     {
-      name: "IEEE Hackathon 2024",
-      result: "Winner",
-      context: "Built a working IoT prototype under time pressure for smart agriculture",
-      linkedinLink: "https://linkedin.com/posts/username/ieee-hackathon"
-    },
-    {
-      name: "National Engineering Competition",
-      result: "Rank #27",
-      context: "Developed an optimized solution for routing problem using advanced algorithms",
-      linkedinLink: "https://linkedin.com/posts/username/eng-competition"
-    },
-    {
-      name: "Kaggle Competition - ML Challenge",
-      result: "Completed with Silver Badge",
-      context: "Built machine learning model for predictive analytics with 92% accuracy",
-      linkedinLink: "https://linkedin.com/posts/username/kaggle-ml"
-    },
-    {
-      name: "University Coding Marathon",
+      name: "CodeAréna ’25",
       result: "Finalist",
-      context: "Solved complex algorithmic challenges demonstrating problem-solving skills",
-      linkedinLink: "https://linkedin.com/posts/username/coding-marathon"
+      context: "This is a programing competition which was organized by KDU.",
+      linkedinLink: "https://www.linkedin.com/posts/praveen-de-silva-854a732a2_problemsolving-finalists-kdu-activity-7411004597332455424-UlYP?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEkg6AABOq2dXdWOGUX3vzM4-Jm8Pzn8mAg"
+    },
+    {
+      name: "Mini Xtream",
+      result: "Rank #9",
+      context: "This is a programing competition which had to be participated for all entire 200 of cse 23 students.",
+      linkedinLink: "https://www.linkedin.com/posts/praveen-de-silva-854a732a2_thrilled-to-have-placed-in-the-top-10-at-activity-7410997408609775616-IlwR?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEkg6AABOq2dXdWOGUX3vzM4-Jm8Pzn8mAg"
+    },
+    {
+      name: "SLIOT '25",
+      result: "Finalist",
+      context: "This is a IOT based hackathon which was organized by cse batch of University of Moratuwa.",
+      linkedinLink: "https://www.linkedin.com/posts/thashira-devindu-49a1b6349_sliotchallenge2025-iot-sltmobitel-ugcPost-7309617829874434048-ljBo?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEkg6AABOq2dXdWOGUX3vzM4-Jm8Pzn8mAg"
     }
   ];
 
   return (
     <div className="container mx-auto px-6 pt-20 pb-16">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl md:text-6xl font-light mb-4">Achievements</h1>
-        <p className="text-xl font-light text-gray-300 mb-12">
-          Competitions, awards, and recognitions
-        </p>
+        <FadeInSection>
+          <h1 className="text-4xl md:text-6xl font-light mb-4">Achievements</h1>
+          <p className="text-xl font-light text-gray-300 mb-12">
+            Competitions, awards, and recognitions
+          </p>
+        </FadeInSection>
 
         <div className="space-y-8">
           {achievements.map((achievement, index) => (
-            <div 
-              key={index}
-              className="bg-black bg-opacity-40 backdrop-blur-md rounded-lg p-8 shadow-xl shadow-white/20 hover:shadow-white/30 transition-all duration-300"
-            >
+            <FadeInSection key={index} delay={index * 0.05}>
+              <div className="bg-black bg-opacity-40 backdrop-blur-md rounded-lg p-8 shadow-xl shadow-white/20 transition-all duration-300">
               {/* Name and Result */}
               <div className="flex flex-wrap justify-between items-start mb-4 pb-4 relative border-b">
                 <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-20"></div>
@@ -78,7 +75,8 @@ export default function Achievements() {
                   <span>View on LinkedIn</span>
                 </a>
               </div>
-            </div>
+              </div>
+            </FadeInSection>
           ))}
         </div>
       </div>
