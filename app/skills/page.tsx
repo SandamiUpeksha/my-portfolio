@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Skills() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -28,8 +29,9 @@ export default function Skills() {
 
   const languages = [
     { name: "Sinhala", level: 95 },
-    { name: "English", level: 80 },
-    { name: "Tamil", level: 30 }
+    { name: "English", level: 80, duolingo: 81 },
+    { name: "Tamil", level: 30 },
+    { name: "Japanese", level: 5,duolingo: 5  }
   ];
 
   const softSkills = [
@@ -105,6 +107,24 @@ export default function Skills() {
         {/* Slide 2 - Education */}
         <div className={`transition-all duration-700 ${currentSlide === 1 ? 'opacity-100 translate-x-0 block' : 'opacity-0 translate-x-10 pointer-events-none hidden'}`}>
           <div className="space-y-6">
+            
+            {/* University */}
+            <div className="bg-black bg-opacity-40 backdrop-blur-md rounded-lg p-8 shadow-xl shadow-white/20">
+              <h2 className="text-2xl font-light mb-6 text-white border-b border-white border-opacity-20 pb-3">
+                University Education
+              </h2>
+              <div className="font-light space-y-3">
+                <h3 className="text-xl text-white mb-2">Computer Science Engineering</h3>
+                <h4 className="text-lg text-gray-300 mb-2">University of Moratuwa</h4>
+                <p className="text-gray-400 text-sm mb-3">Since March 2024</p>
+                <div className="space-y-2">
+                  {/* <p className="text-gray-300">CGPA: <span className="text-white font-normal">3.8</span></p> */}
+                  <p className="text-gray-300">Dean's List: <span className="text-white font-normal">Semester 1, Semester 2</span></p>
+                </div>
+              </div>
+            </div>
+
+
             {/* School Education */}
             <div className="bg-black bg-opacity-40 backdrop-blur-md rounded-lg p-8 shadow-xl shadow-white/20">
               <h2 className="text-2xl font-light mb-6 text-white border-b border-white border-opacity-20 pb-3">
@@ -112,7 +132,7 @@ export default function Skills() {
               </h2>
               <div className="space-y-4 font-light">
                 <div>
-                  <h3 className="text-xl text-white mb-2">Kingswood College Kandy</h3>
+                  <h4 className="text-xl text-gray-300 mb-2">Kingswood College Kandy</h4>
                   <p className="text-gray-400 text-sm mb-4">2008 - 2022</p>
                 </div>
                 
@@ -138,26 +158,24 @@ export default function Skills() {
                 Diploma in IT and English
               </h2>
               <div className="font-light">
-                <h3 className="text-xl text-white mb-2">ESOFT</h3>
-                <p className="text-gray-400 text-sm">March 2023 - January 2024</p>
+                <h4 className="text-xl text-gray-300 mb-2">ESOFT Metro Campus Kandy</h4>
+                <p className="text-gray-400 text-sm mb-4">March 2023 - January 2024</p>
               </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="text-lg text-white mb-2">Diploma in IT</h4>
+                    <p className="text-gray-300">Overall Grade: <span className="text-white font-normal">Distinction</span></p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-lg text-white mb-2">Diploma in English</h4>
+                    <p className="text-gray-300">Overall Grade: <span className="text-white font-normal">Distinction</span></p>
+                  </div>
+                </div>
             </div>
 
-            {/* University */}
-            <div className="bg-black bg-opacity-40 backdrop-blur-md rounded-lg p-8 shadow-xl shadow-white/20">
-              <h2 className="text-2xl font-light mb-6 text-white border-b border-white border-opacity-20 pb-3">
-                University Education
-              </h2>
-              <div className="font-light space-y-3">
-                <h3 className="text-xl text-white mb-2">Computer Science Engineering</h3>
-                <h4 className="text-lg text-gray-300 mb-2">University of Moratuwa</h4>
-                <p className="text-gray-400 text-sm mb-3">Since March 2024</p>
-                <div className="space-y-2">
-                  <p className="text-gray-300">CGPA: <span className="text-white font-normal">3.8</span></p>
-                  <p className="text-gray-300">Dean's List: <span className="text-white font-normal">Semester 1, Semester 2</span></p>
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
 
@@ -172,8 +190,19 @@ export default function Skills() {
               <div className="space-y-6">
                 {languages.map((lang, index) => (
                   <div key={index}>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-white font-light text-lg">{lang.name}</span>
+                    <div className="flex justify-between items-center mb-2">
+                      <div className="flex items-center gap-2">
+                        <span className="text-white font-light text-lg">{lang.name}</span>
+                        {lang.duolingo && (
+                          <div className="flex items-center gap-1 bg-white/10 px-3 py-1 rounded-full">
+                            <svg className="w-5 h-5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <image href="https://design.duolingo.com/86230c9ad10d9f08b785.svg" width="24" height="24"/>
+                              <circle cx="12" cy="12" r="10" fill="none" stroke="#1CB0F6" strokeWidth="0.5" opacity="0"/>
+                            </svg>
+                            <span className="text-white font-light text-sm">Duolingo: {lang.duolingo}</span>
+                          </div>
+                        )}
+                      </div>
                       <span className="text-gray-400 font-light">{lang.level}%</span>
                     </div>
                     <div className="w-full bg-white/10 rounded-full h-3 overflow-hidden">

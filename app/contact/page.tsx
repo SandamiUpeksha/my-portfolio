@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { MessageCircle, Send, Linkedin, Github, Mail, Phone } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -133,18 +134,42 @@ export default function Contact() {
 
             <div className="bg-black bg-opacity-40 backdrop-blur-md rounded-lg p-8 shadow-xl shadow-white/20 hover:shadow-white/30 transition-all duration-300">
               <h2 className="text-2xl font-light mb-6">Social Media</h2>
-              <div className="space-y-3 font-light">
-                <a href="#" className="block hover:text-gray-300 transition-colors">
-                  LinkedIn →
+              <div className="flex items-center justify-center gap-6">
+                <a 
+                  href="https://wa.me/94702241222" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 transform"
+                  title="WhatsApp"
+                >
+                  <MessageCircle size={28} className="text-white" />
                 </a>
-                <a href="#" className="block hover:text-gray-300 transition-colors">
-                  GitHub →
+                <a 
+                  href="https://t.me/praveen" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 transform"
+                  title="Telegram"
+                >
+                  <Send size={28} className="text-white" />
                 </a>
-                <a href="#" className="block hover:text-gray-300 transition-colors">
-                  Twitter →
+                <a 
+                  href="https://www.linkedin.com/in/praveen-de-silva" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 transform"
+                  title="LinkedIn"
+                >
+                  <Linkedin size={28} className="text-white" />
                 </a>
-                <a href="#" className="block hover:text-gray-300 transition-colors">
-                  Instagram →
+                <a 
+                  href="https://github.com/praveen" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 transform"
+                  title="GitHub"
+                >
+                  <Github size={28} className="text-white" />
                 </a>
               </div>
             </div>

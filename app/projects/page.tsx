@@ -17,45 +17,45 @@ export default function Projects() {
       status: "Completed"
     },
     {
-      title: "Bank Management System",
-      problem: "Creates a modern, professional online presence to showcase skills and projects.",
+      title: "B-Trust MBMS",
+      problem: "Developing a secure, high integrity DBMS for microbanking operations with automated financial logic and role based access.",
       features: [
-        "Responsive design for all devices",
-        "Smooth page transitions",
-        "Interactive slider components",
-        "Dynamic content management"
+        "Role-driven dashboards (Admin, Manager, Agent)",
+        "Automated interest accrual for Savings and FD via scheduled jobs",
+        "Real-time transaction analytics and reporting views",
+        "Comprehensive audit logging and database-level triggers"
       ],
-      techStack: "Next.js, TypeScript, Tailwind CSS, React",
+      techStack: "PostgreSQL, Express.js, React, Node.js (PERN), TypeScript, CSS",
       liveLink: null,
-      githubLink: "https://github.com/username/portfolio",
+      githubLink: "https://github.com/microbanking-system/DBMS_Microbanking_System",
       status: "Completed"
     },
     {
-      title: "IoT Monitoring System",
-      problem: "Advanced engineering solution for real-time monitoring of industrial equipment.",
+      title: "Driver Safety MS - SLIOT'25",
+      problem: "System for make the driver taks easier and safe. This brings us to the FINAL round of this competition.",
       features: [
-        "Real-time sensor data collection",
-        "Automated alert system",
-        "Data visualization dashboard"
+        "Digital documentation handelling",
+        "Driver drunk detaila",
+        "Sleep detection"
       ],
       techStack: "Python, IoT, MQTT, InfluxDB, Grafana",
       liveLink: null,
-      githubLink: "https://github.com/username/iot-monitor",
-      status: "In Progress"
+      githubLink: null,
+      status: "Completed"
     },
     {
-      title: "E-Commerce Platform",
-      problem: "Full-stack web application with modern UI/UX and secure payment integration.",
+      title: "Moonscake E-Commerce Platform",
+      problem: "Full-stack web application for a private cake business.",
       features: [
         "Product catalog management",
         "Shopping cart functionality",
-        "Secure payment gateway",
+        "Secure payment via reciept photo transfering",
         "Order tracking system"
       ],
       techStack: "React, Node.js, MongoDB, Express, Stripe",
-      liveLink: "https://ecommerce-demo.vercel.app",
-      githubLink: "https://github.com/username/ecommerce",
-      status: "Completed"
+      liveLink: null,
+      githubLink: null,
+      status: "In Progress"
     }
   ];
 
