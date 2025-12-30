@@ -44,7 +44,7 @@ export default function Home() {
 
         <div className="max-w-6xl mx-auto">
           {/* Main Grid - Header and Image at Same Level */}
-          <div className="grid md:grid-cols-2 md:gap-12  items-start">
+          <div className="grid md:grid-cols-2 md:gap-12 items-start">
             {/* Left - Header Content */}
             <FadeInSection delay={0.2}>
               <div>
@@ -79,7 +79,7 @@ export default function Home() {
                       <div className="relative h-[32rem] flex items-center justify-center">
                         <div className="relative">
                           <img 
-                            src="/images/profile4.png" 
+                            src="/images/profile5.png" 
                             alt="Praveen De Silva" 
                             className="rounded-lg h-full object-cover"
                           />
@@ -98,7 +98,7 @@ export default function Home() {
                       transition={{ duration: 0.4 }}
                     >
                       <div className="relative h-[32rem] flex items-center justify-center">
-                        <div className="bg-opacity-5 backdrop-blur-md rounded-lg p-8  border-opacity-20  w-full h-full flex flex-col justify-center">
+                        <div className="bg-opacity-5 backdrop-blur-md rounded-lg p-8 border-opacity-20 w-full h-full flex flex-col justify-center">
                           <h2 className="text-xl sm:text-2xl md:text-3xl font-light text-white mb-6">About Me</h2>
                           <p className="text-sm sm:text-base md:text-lg text-gray-200 font-light leading-relaxed mb-4 text-justify">
                             I'm a passionate engineering undergraduate pursuing my BSc in Engineering, dedicated to innovation and creative problem-solving.
@@ -119,7 +119,6 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-start mt-16">
             {/* Left - Content */}
             <div>
-
               {/* Slides 1-5 - Content Cards */}
               {/* {[1, 2, 3, 4, 5].map((slideIndex) => (
                 <div key={slideIndex} className={`transition-all duration-700 ${currentSlide === slideIndex ? 'opacity-100 translate-x-0 block' : 'opacity-0 translate-x-10 pointer-events-none hidden'}`}>
