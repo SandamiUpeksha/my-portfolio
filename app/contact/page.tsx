@@ -65,8 +65,8 @@ export default function Contact() {
     <div className="container mx-auto px-6 pt-20 pb-16">
       <div className="max-w-6xl mx-auto">
         <FadeInSection>
-          <h1 className="text-4xl md:text-6xl font-light mb-4">Contact</h1>
-          <p className="text-xl font-light text-gray-300 mb-12">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-4">Contact</h1>
+          <p className="text-base sm:text-lg md:text-xl font-light text-gray-300 mb-12">
             Get in touch with me
           </p>
         </FadeInSection>
@@ -75,7 +75,7 @@ export default function Contact() {
           {/* Contact Form */}
           <FadeInSection delay={0.1}>
             <div className="bg-black bg-opacity-40 backdrop-blur-md rounded-lg p-8 shadow-xl shadow-white/20 transition-all duration-300">
-            <h2 className="text-2xl font-light mb-6">Send a Message</h2>
+            <h2 className="text-lg sm:text-xl md:text-2xl font-light mb-6">Send a Message</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-light text-gray-400 mb-2">
@@ -179,7 +179,7 @@ export default function Contact() {
           <div className="space-y-8">
             <FadeInSection delay={0.2}>
               <div className="bg-black bg-opacity-40 backdrop-blur-md rounded-lg p-8 shadow-xl shadow-white/20 transition-all duration-300">
-              <h2 className="text-2xl font-light mb-6">Contact Information</h2>
+              <h2 className="text-lg sm:text-xl md:text-2xl font-light mb-6">Contact Information</h2>
               <div className="space-y-4 font-light">
                 <div>
                   <h3 className="text-sm text-gray-400 mb-1">Email</h3>
@@ -199,7 +199,7 @@ export default function Contact() {
 
             <FadeInSection delay={0.3}>
               <div className="bg-black bg-opacity-40 backdrop-blur-md rounded-lg p-8 shadow-xl shadow-white/20 transition-all duration-300">
-              <h2 className="text-2xl font-light mb-6">Social Media</h2>
+              <h2 className="text-lg sm:text-xl md:text-2xl font-light mb-6">Social Media</h2>
               <div className="flex items-center justify-center gap-6">
                 <motion.a
                   whileHover={{ scale: 1.15, rotate: 5 }}

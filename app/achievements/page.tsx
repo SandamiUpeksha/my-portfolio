@@ -35,8 +35,8 @@ export default function Achievements() {
     <div className="container mx-auto px-6 pt-20 pb-16">
       <div className="max-w-6xl mx-auto">
         <FadeInSection>
-          <h1 className="text-4xl md:text-6xl font-light mb-4">Achievements</h1>
-          <p className="text-xl font-light text-gray-300 mb-12">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-4">Achievements</h1>
+          <p className="text-base sm:text-lg md:text-xl font-light text-gray-300 mb-12">
             Competitions, awards, and recognitions
           </p>
         </FadeInSection>
@@ -48,10 +48,10 @@ export default function Achievements() {
               {/* Name and Result */}
               <div className="flex flex-wrap justify-between items-start mb-4 pb-4 relative border-b">
                 <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-20"></div>
-                <h2 className="text-3xl font-light text-white mb-2 md:mb-0">
+                <h2 className="text-2xl sm:text-2xl md:text-3xl font-light text-white mb-2 md:mb-0">
                   {achievement.name} 
                 </h2>
-                <span className="px-4 py-1 bg-gradient-to-r from-yellow-500/20 to-amber-500/20 border border-yellow-500 text-yellow-400 rounded-full text-sm font-light">
+                <span className="px-2 py-0.5 sm:px-4 sm:py-1 bg-gradient-to-r from-yellow-500/20 to-amber-500/20 border border-yellow-500 text-yellow-400 rounded-full text-xs sm:text-sm font-light">
                   {achievement.result}
                 </span>
               </div>
