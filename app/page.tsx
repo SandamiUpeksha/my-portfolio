@@ -79,7 +79,7 @@ export default function Home() {
                       <div className="relative h-[32rem] flex items-center justify-center">
                         <div className="relative">
                           <img 
-                            src="/images/profile2.png" 
+                            src="/images/profile4.png" 
                             alt="Praveen De Silva" 
                             className="rounded-lg h-full object-cover"
                           />
