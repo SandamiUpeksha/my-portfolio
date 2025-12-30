@@ -101,7 +101,7 @@ export default function Home() {
                         <div className="bg-opacity-5 backdrop-blur-md rounded-lg p-8 border-opacity-20 w-full h-full flex flex-col justify-center">
                           <h2 className="text-xl sm:text-2xl md:text-3xl font-light text-white mb-6">About Me</h2>
                           <p className="text-sm sm:text-base md:text-lg text-gray-200 font-light leading-relaxed mb-4 text-justify">
-                            I'm a passionate engineering undergraduate pursuing my BSc in Engineering, dedicated to innovation and creative problem-solving.
+                            I'm a passionate computer science engineering undergraduate pursuing my BSc in Engineering, dedicated to innovation and creative problem-solving.
                           </p>
                           <p className="text-sm sm:text-base md:text-lg text-gray-200 font-light leading-relaxed text-justify">
                             Currently at University of Moratuwa, I combine academic excellence with practical experience.
