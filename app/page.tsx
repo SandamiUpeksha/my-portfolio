@@ -49,7 +49,7 @@ export default function Home() {
             <FadeInSection delay={0.2}>
               <div>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light mb-2">
-                  Praveen De Silva test
+                  Praveen De Silva t2
                 </h1>
                 <p className="text-sm sm:text-base md:text-xl font-light text-pink-200 mb-8">
                   Bsc Eng (hons) - University of Moratuwa (UG)
