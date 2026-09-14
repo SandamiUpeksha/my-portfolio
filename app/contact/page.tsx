@@ -169,7 +169,7 @@ export default function Contact() {
               
               {submitStatus === 'error' && (
                 <div className="p-4 bg-red-500/20 border border-red-500/50 rounded-lg text-red-200 text-center font-light">
-                  Something went wrong. Please try again or email directly at desilvabkp@gmail.com
+                  Something went wrong. Please try again or email directly at upeksha.balasooriya2003@gmail.com
                 </div>
               )}
             </form>
@@ -184,15 +184,15 @@ export default function Contact() {
               <div className="space-y-4 font-light">
                 <div>
                   <h3 className="text-sm text-gray-400 mb-1">Email</h3>
-                  <p className="text-white">praveend.23@cse.mrt.ac.lk</p>
+                  <p className="text-white">upeksha.balasooriya2003@gmail.com</p>
                 </div>
                 <div>
                   <h3 className="text-sm text-gray-400 mb-1">Phone</h3>
-                  <p className="text-white">+94 70 2241 222</p>
+                  <p className="text-white">+94 77 592 3491</p>
                 </div>
                 <div>
                   <h3 className="text-sm text-gray-400 mb-1">Location</h3>
-                  <p className="text-white">15/4 B, Sudharmarama Mawatha, Bowala, Kandy.</p>
+                  <p className="text-white">Meewathura, Peradeniya.</p>
                 </div>
               </div>
             </div>
@@ -205,7 +205,7 @@ export default function Contact() {
                 <motion.a
                   whileHover={{ scale: 1.15, rotate: 5 }}
                   whileTap={{ scale: 0.95 }}
-                  href="https://wa.me/94702241222"
+                  href="https://wa.me/94775923491"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300"
@@ -238,7 +238,7 @@ export default function Contact() {
                 <motion.a
                   whileHover={{ scale: 1.15, rotate: 5 }}
                   whileTap={{ scale: 0.95 }}
-                  href="https://github.com/bkpdesilva"
+                  href="https://github.com/SandamiUpeksha"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300"

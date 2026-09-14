@@ -7,8 +7,8 @@ import PageTransition from "@/components/PageTransition";
 import VantaBackground from "@/components/VantaBackground";
 
 export const metadata: Metadata = {
-  title: "Praveen De Silva | Portfolio",
-  description: "Portfolio of Praveen De Silva - Engineering Undergraduate",
+  title: "Upeksha Balasooriya | Portfolio",
+  description: "Portfolio of Upeksha Balasooriya - Engineering Undergraduate",
 };
 
 export default function RootLayout({

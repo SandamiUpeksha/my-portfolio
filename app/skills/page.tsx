@@ -20,38 +20,28 @@ export default function Skills() {
   }, [currentSlide]);
 
   const skills = [
+    // Example entry - replace with a real skill category
     {
-      category: "Programming Languages",
-      items: ["Python", "SQL", "C++", "C", "Java", "TypeScript", "Dart", "JavaScript"]
+      category: "Example: Programming Languages",
+      items: ["Example: Python", "Example: Java"]
     },
+    // Fill me - copy this block for each new category
     {
-      category: "Frameworks & Libraries",
-      items: ["React", "Next.js", "Node.js", "FastAPI", "Flutter", "PyTorch Geometric", "scikit-learn", "XGBoost", "HTML/CSS", "Tailwind CSS"]
-    },
-    {
-      category: "Database",
-      items: ["PostgreSQL", "MongoDB", "Firebase"]
-    },
-    {
-      category: "Tools & Technologies",
-      items: ["Google Cloud", "Docker", "Git", "VS Code", "Figma", "Adobe Creative Suite"]
-    },
-    {
-      category: "Engineering Skills",
-      items: ["CAD Design", "Circuit Design", "Data Analysis", "Problem Solving"]
+      category: "Fill me: Category name",
+      items: ["Fill me: Skill 1", "Fill me: Skill 2"]
     }
   ];
 
   const languages = [
-    { name: "Sinhala", level: 95 },
-    { name: "English", level: 80, duolingo: 81 },
-    { name: "Tamil", level: 30 },
-    { name: "Japanese", level: 5,duolingo: 5  }
+    // Example entry - level is 0-100; duolingo is optional
+    { name: "Example: English", level: 80, duolingo: 50 },
+    // Fill me - copy this line for each language
+    { name: "Fill me: Language", level: 50 }
   ];
 
   const softSkills = [
-    "Teamwork", "Leadership", "Friendship", "Communication", 
-    "Problem Solving", "Time Management", "Adaptability", "Creativity"
+    "Example: Teamwork", // Example entry
+    "Fill me: Skill"     // Fill me - add more strings
   ];
 
   const nextSlide = () => {
@@ -120,9 +110,9 @@ export default function Skills() {
           >
             <div className="space-y-6">
             
-            {/* University */}
+            {/* University - Example entry, replace with real details */}
             <FadeInSection delay={0.1}>
-              <motion.div 
+              <motion.div
                 whileHover={{ scale: 1.02, y: -5 }}
                 transition={{ duration: 0.3 }}
                 className="bg-black bg-opacity-40 backdrop-blur-md rounded-lg p-8 shadow-xl shadow-white/20"
@@ -131,21 +121,19 @@ export default function Skills() {
                 University Education
               </h2>
               <div className="font-light space-y-3">
-                <h3 className="text-base sm:text-lg md:text-xl text-white mb-2">Computer Science Engineering</h3>
-                <h4 className="text-sm sm:text-base md:text-lg text-gray-300 mb-2">University of Moratuwa</h4>
-                <p className="text-gray-400 text-sm mb-3">Since March 2024</p>
+                <h3 className="text-base sm:text-lg md:text-xl text-white mb-2">BSc (Hons) in Computer Science</h3>
+                <h4 className="text-sm sm:text-base md:text-lg text-gray-300 mb-2">University of Peradeniya</h4>
+                <p className="text-gray-400 text-sm mb-3">Since 2024</p>
                 <div className="space-y-2">
-                  <p className="text-gray-300">CGPA: <span className="text-white font-normal">3.56</span></p>
-                  <p className="text-gray-300">Dean&apos;s List: <span className="text-white font-normal">Semester 1 (GPA 4.00), Semester 2 (GPA 3.82)</span></p>
+                  <p className="text-gray-300">CGPA: <span className="text-white font-normal">3.99</span></p>
                 </div>
               </div>
               </motion.div>
             </FadeInSection>
 
-
-            {/* School Education */}
+            {/* School Education - Fill me, copy this card for other education */}
             <FadeInSection delay={0.2}>
-              <motion.div 
+              <motion.div
                 whileHover={{ scale: 1.02, y: -5 }}
                 transition={{ duration: 0.3 }}
                 className="bg-black bg-opacity-40 backdrop-blur-md rounded-lg p-8 shadow-xl shadow-white/20"
@@ -155,54 +143,24 @@ export default function Skills() {
               </h2>
               <div className="space-y-4 font-light">
                 <div>
-                  <h4 className="text-base sm:text-lg md:text-xl text-gray-300 mb-2">Kingswood College Kandy</h4>
-                  <p className="text-gray-400 text-sm mb-4">2008 - 2022</p>
+                  <h4 className="text-base sm:text-lg md:text-xl text-gray-300 mb-2">Fill me: School name</h4>
+                  <p className="text-gray-400 text-sm mb-4">Fill me: Years attended</p>
                 </div>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h4 className="text-sm sm:text-base md:text-lg text-white mb-2">GCE O/L (2019)</h4>
-                    <p className="text-gray-300">Obtained <span className="text-white font-normal">9 As</span> (including Tamil)</p>
+                    <h4 className="text-sm sm:text-base md:text-lg text-white mb-2">Fill me: GCE O/L (Year)</h4>
+                    <p className="text-gray-300">Fill me: Results</p>
                   </div>
-                  
+
                   <div>
-                    <h4 className="text-sm sm:text-base md:text-lg text-white mb-2">GCE A/L (2022)</h4>
-                    <p className="text-gray-300">Physical Science Stream</p>
-                    <p className="text-gray-300">Obtained <span className="text-white font-normal">3 As</span></p>
-                    <p className="text-gray-300">Z-Score: <span className="text-white font-normal">2.5895</span> | IR: <span className="text-white font-normal">152</span></p>
+                    <h4 className="text-sm sm:text-base md:text-lg text-white mb-2">Fill me: GCE A/L (Year)</h4>
+                    <p className="text-gray-300">Fill me: Stream</p>
+                    <p className="text-gray-300">Fill me: Results</p>
                   </div>
                 </div>
               </div>
               </motion.div>
-            </FadeInSection>
-
-            {/* Diploma */}
-            <FadeInSection delay={0.3}>
-              <motion.div 
-                whileHover={{ scale: 1.02, y: -5 }}
-                transition={{ duration: 0.3 }}
-                className="bg-black bg-opacity-40 backdrop-blur-md rounded-lg p-8 shadow-xl shadow-white/20"
-              >
-              <h2 className="text-lg sm:text-xl md:text-2xl font-light mb-6 text-white border-b border-white border-opacity-20 pb-3">
-                Diploma in IT and English
-              </h2>
-              <div className="font-light">
-                <h4 className="text-base sm:text-lg md:text-xl text-gray-300 mb-2">ESOFT Metro Campus Kandy</h4>
-                <p className="text-gray-400 text-sm mb-4">March 2023 - January 2024</p>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <h4 className="text-sm sm:text-base md:text-lg text-white mb-2">Diploma in IT</h4>
-                    <p className="text-gray-300">Overall Grade: <span className="text-white font-normal">Distinction</span></p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="text-sm sm:text-base md:text-lg text-white mb-2">Diploma in English</h4>
-                    <p className="text-gray-300">Overall Grade: <span className="text-white font-normal">Distinction</span></p>
-                  </div>
-                </div>
-            </motion.div>
             </FadeInSection>
 
             

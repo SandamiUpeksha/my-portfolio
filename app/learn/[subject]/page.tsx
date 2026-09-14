@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ subject: 
   const subject = getSubject(subjectSlug);
   if (!subject) return {};
   return {
-    title: `${subject.title} | Learn | Praveen De Silva`,
+    title: `${subject.title} | Learn | Upeksha Balasooriya`,
     description: subject.description,
   };
 }

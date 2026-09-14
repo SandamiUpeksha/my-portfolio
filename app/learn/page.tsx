@@ -3,7 +3,7 @@ import { getAllSubjects } from '@/lib/learn';
 import FadeInSection from '@/components/FadeInSection';
 
 export const metadata = {
-  title: 'Learn | Praveen De Silva',
+  title: 'Learn | Upeksha Balasooriya',
   description: 'Study notes and things I\'m learning',
 };
 

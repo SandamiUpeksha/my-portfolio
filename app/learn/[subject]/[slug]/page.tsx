@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ subject: 
   const note = getNote(subject, slug);
   if (!note) return {};
   return {
-    title: `${note.title} | Praveen De Silva`,
+    title: `${note.title} | Upeksha Balasooriya`,
     description: note.description,
   };
 }

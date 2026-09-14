@@ -15,20 +15,20 @@ export default function Home() {
             <FadeInSection delay={0.2}>
               <div className="flex flex-col items-center md:items-start text-center md:text-left">
                 <Image
-                  src="/images/profile-05.png"
-                  alt="Praveen De Silva"
+                  src="/images/profile-05.jpeg"
+                  alt="Upeksha Balasooriya"
                   width={288}
                   height={288}
                   priority
                   className="w-64 h-64 sm:w-72 sm:h-72 rounded-full object-cover border-2 border-white shadow-2xl mb-8"
                 />
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-2">
-                  Praveen De Silva
+                  Upeksha Balasooriya
                 </h1>
                 <p className="text-xs sm:text-sm md:text-base lg:text-lg font-light text-pink-200 mb-8">
-                  BSc Eng (Hons) in CSE undergraduate <br />
-                  <em>Specialized in DSE</em> <br />
-                  University of Moratuwa
+                  BSc (Hons) in Computer Science undergraduate <br />
+                  {/* <em>Specialized in DSE</em> <br /> */}
+                  University of Peradeniye
 
                 </p>
 

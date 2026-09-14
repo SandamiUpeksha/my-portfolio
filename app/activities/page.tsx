@@ -4,28 +4,20 @@ import FadeInSection from '@/components/FadeInSection';
 
 export default function Activities() {
   const activities = [
+    // Example entry - replace with a real activity
     {
-      title: "Batch Rep",
-      details: ["DiTec-195, Esoft Metro Campus Kandy"]
-    },
-    {
-      title: "Web Developer, Media Committee",
+      title: "Example: Member, Computer Science Society",
       details: [
-        "Build and maintain the official website, IEEE WIE Student Branch, University of Moratuwa"
+        "Example: Helped organise coding workshops for first-year students",
+        "Example: University of Peradeniya (2024 - Present)"
       ]
     },
+    // Fill me - copy this block for each new activity
     {
-      title: "Violinist and Member",
+      title: "Fill me: Role / Activity name",
       details: [
-        "Classical Music Society, University of Moratuwa, Kingswood College Kandy",
-        "1st Place, All Island Music Competition (School Category - Orchestra, Violinist)"
-      ]
-    },
-    {
-      title: "Volunteer",
-      details: [
-        "Susanaka Sansada (2023 - Present)",
-        "CSE '23 Careers Day, University of Moratuwa"
+        "Fill me: Organisation and years",
+        "Fill me: What you did"
       ]
     }
   ];
